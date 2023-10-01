@@ -1,0 +1,10 @@
+@mixin bgColorFadeIn($start: "left", $end: "right", $color: red) {
+  background: linear-gradient(to #{$end}, $color 50%, transparent 0);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 300ms ease;
+
+  &--start-animation {
+    background-position: left bottom;
+  }
+}

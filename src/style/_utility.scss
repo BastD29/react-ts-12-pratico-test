@@ -1,0 +1,200 @@
+@use "variables";
+@use "functions";
+@import "mixins";
+
+// Dimensions
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-device-width {
+  min-width: 100vw;
+}
+
+.full-device-height {
+  min-height: 100vh;
+}
+
+// Text
+.title {
+  font-weight: 800;
+  font-family: variables.$headings-ff;
+
+  &--primary {
+    color: map-get($map: variables.$theme, $key: "primary-violet");
+  }
+
+  &--secondary {
+    color: map-get($map: variables.$theme, $key: "secondary");
+  }
+}
+
+.h1 {
+  @extend .title;
+  font-size: 5rem;
+}
+
+.h2 {
+  @extend .title;
+  font-size: 3.75rem;
+}
+
+.h3 {
+  @extend .title;
+  font-size: 2.5rem;
+}
+
+.h4 {
+  @extend .title;
+  font-size: 2rem;
+}
+
+.h5 {
+  @extend .title;
+  font-size: 1.5rem;
+}
+
+.h6 {
+  @extend .title;
+  font-size: 1.25rem;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.text-body-bold {
+  @extend .text-body;
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+@each $key, $color in variables.$theme {
+  .text-#{$key} {
+    color: #{$color} !important;
+  }
+}
+
+@each $key, $gray in variables.$grays {
+  .text-#{$key} {
+    color: #{$gray} !important;
+  }
+}
+// Layout
+.place-items-center {
+  display: grid;
+  place-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+@each $value in variables.$justify-content-values {
+  .justify-content-#{$value} {
+    justify-content: #{$value};
+  }
+}
+
+@each $value in variables.$align-items-values {
+  .align-items-#{$value} {
+    align-items: #{$value};
+  }
+}
+
+@for $i from 0 to 6 {
+  .m-#{$i} {
+    margin: #{$i}rem;
+  }
+  .mx-#{$i} {
+    @include mx(#{$i}rem);
+  }
+  .my-#{$i} {
+    @include my(#{$i}rem);
+  }
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}rem;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}rem;
+  }
+
+  .p-#{$i} {
+    padding: #{$i}rem;
+  }
+  .px-#{$i} {
+    @include px(#{$i}rem);
+  }
+  .py-#{$i} {
+    @include py(#{$i}rem);
+  }
+  .pt-#{$i} {
+    padding-top: #{$i}rem;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}rem;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}rem;
+  }
+}
+
+// =========================
+// Main blocks padding
+//
+// @see variables.scss $inline-viewport-padding
+// =========================
+@each $block, $value in variables.$inline-viewport-padding {
+  @if functions.is-map($value) {
+    @each $device, $spacing in $value {
+      .viewport-mx-#{$block}--#{$device} {
+        @include mx($spacing);
+      }
+
+      .viewport-px-#{$block}--#{$device} {
+        @include px($spacing);
+      }
+    }
+  } @else {
+    .viewport-mx-#{$block} {
+      @include mx($value);
+    }
+    .viewport-px-#{$block} {
+      @include px($value);
+    }
+  }
+}
+
+// Background
+@each $key, $color in variables.$theme {
+  .bg-#{$key} {
+    background-color: #{$color};
+  }
+}
+
+@each $key, $gray in variables.$grays {
+  .bg-#{$key} {
+    background-color: #{$gray};
+  }
+}

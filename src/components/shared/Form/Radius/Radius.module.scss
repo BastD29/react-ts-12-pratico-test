@@ -1,0 +1,51 @@
+@use "@style/variables" as variables;
+@import "@style/mixins";
+
+.radius-container {
+  display: flex;
+  align-items: center;
+
+  &__element {
+    &--error {
+      :global {
+        .ant-radio-inner {
+          border-color: red;
+        }
+      }
+    }
+  }
+}
+
+.radio-group {
+  @include flex(row, flex-start, flex-start, 1rem);
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(6.25rem, 1fr));
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+  }
+}
+
+:global {
+  .ant-radio-wrapper:hover .ant-radio,
+  .ant-radio:hover .ant-radio-inner,
+  .ant-radio-input:focus + .ant-radio-inner {
+    box-shadow: 0 0 0 1px hsl(261, 93%, 84%);
+    border-radius: 50%;
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+  }
+
+  .ant-radio-inner::after {
+    background-color: map-get($map: variables.$theme, $key: "primary-violet");
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+  }
+  .ant-radio-checked .ant-radio-inner {
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+    box-shadow: none;
+  }
+}

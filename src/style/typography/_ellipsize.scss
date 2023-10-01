@@ -1,0 +1,8 @@
+@use "@style/variables" as variables;
+
+@mixin ellipsize($max_width) {
+  max-width: $max_width;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

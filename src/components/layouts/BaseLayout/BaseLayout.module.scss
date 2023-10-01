@@ -1,0 +1,8 @@
+@use "@style/variables" as variables;
+// @use "@shared/Navbar/Navbar.module" as navbar;
+
+.base-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

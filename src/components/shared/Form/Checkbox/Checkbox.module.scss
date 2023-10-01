@@ -1,0 +1,53 @@
+@use "@style/variables" as variables;
+@import "@style/mixins";
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+
+  &__element {
+    &--error {
+      :global {
+        .ant-checkbox {
+          border-color: red;
+        }
+      }
+    }
+  }
+
+  // &__label {
+  //   font-size: 14px;
+
+  //   &--error {
+  //     color: "#F04438";
+  //   }
+
+  //   &--disabled {
+  //     opacity: 0.9;
+  //   }
+  // }
+}
+
+:global {
+  .ant-checkbox-wrapper:hover .ant-checkbox,
+  .ant-checkbox:hover .ant-checkbox-inner,
+  .ant-checkbox-input:focus + .ant-checkbox-inner {
+    box-shadow: 0 0 0 1px hsl(261, 93%, 84%);
+    border-radius: 2px;
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+  }
+
+  .ant-checkbox-inner::after {
+    background-color: map-get($map: variables.$theme, $key: "primary-violet");
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+    box-shadow: none;
+    background-color: map-get($map: variables.$theme, $key: "primary-violet");
+  }
+
+  .ant-checkbox-checked::after {
+    border: 1px solid map-get($map: variables.$theme, $key: "primary-violet");
+  }
+}

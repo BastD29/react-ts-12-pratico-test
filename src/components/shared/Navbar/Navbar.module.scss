@@ -1,0 +1,54 @@
+@use "@style/variables";
+@use "@style/utility";
+@import "@style/mixins";
+
+$distance-from-viewport: map-get(variables.$inline-viewport-padding, header);
+$navbar-height: 4.25rem;
+
+.navbar {
+  @extend .viewport-px-header;
+  padding-top: $distance-from-viewport;
+  padding-bottom: $distance-from-viewport;
+  padding-block: $distance-from-viewport;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    background-color: map-get($map: variables.$theme, $key: "primary-violet");
+    border-radius: 1rem;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 2.5rem;
+    height: 2rem;
+  }
+
+  &__container-icon-btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__n {
+    color: white;
+    margin: 0;
+    padding-left: 40px;
+  }
+
+  &__container-help-user {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__certification {
+    height: 40px;
+    margin-left: 40px;
+  }
+}

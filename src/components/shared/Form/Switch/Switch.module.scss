@@ -1,0 +1,45 @@
+@use "@style/variables";
+@import "@style/mixins";
+
+$switch-track-bg-color--idle: map-get(variables.$gray, "600");
+$switch-track-bg-color--hover: map-get(variables.$gray, "700");
+$switch-track-bg-color--active: map-get(variables.$theme, "primary-400");
+
+$switch-track-outline-color: map-get(variables.$theme, "primary-400");
+
+.switch {
+  @include flex(row, center, flex-start, 0.5rem);
+
+  &__element {
+    background-color: $switch-track-bg-color--idle;
+
+    &:hover {
+      background-color: $switch-track-bg-color--hover;
+    }
+
+    &:focus {
+      outline: 2px solid $switch-track-outline-color;
+      outline-offset: 1px;
+    }
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.375rem;
+
+    &--disabled {
+      opacity: 0.5;
+    }
+  }
+}
+
+:global {
+  .ant-switch-checked {
+    background-color: $switch-track-bg-color--active;
+
+    &:hover {
+      background-color: darken($switch-track-bg-color--active, 5%);
+    }
+  }
+}

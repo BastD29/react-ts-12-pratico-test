@@ -1,0 +1,174 @@
+$theme: (
+  // primary color
+  "primary-violet": hsl(274, 70%, 22%),
+  "primary-400": hsl(256, 69%, 63%),
+  "primary-300": hsl(258, 92%, 77%),
+  "primary-200": hsl(261, 93%, 84%),
+  "primary-100": hsl(261, 100%, 94%),
+  "secondary": hsl(42, 91%, 55%),
+  "light-peach": hsl(33, 100%, 85%),
+  "peach": hsl(33, 98%, 75%),
+  "background": hsla(216, 20%, 95%, 1)
+);
+
+$violet: (
+  //#512872
+  "900": hsl(273, 48%, 30%),
+  //#653F83
+  "800": hsl(274, 35%, 38%),
+  //#785795
+  "700": hsl(272, 26%, 46%),
+  //#8B6EA7
+  "600": hsl(271, 24%, 54%),
+  //#9F85B8
+  "500": hsl(271, 26%, 62%),
+  //#B29CCA
+  "400": hsl(269, 30%, 70%),
+  //#D9CBED
+  "300": hsl(265, 49%, 86%),
+  //#ECE2FF
+  "200": hsl(261, 100%, 94%),
+  //#F8F4FF
+  "100": hsl(262, 100%, 98%)
+);
+
+$green: (
+  //#12B76A
+  "600": hsl(152, 82%, 39%),
+  //#0B7041
+  "500": hsl(152, 82%, 24%),
+  //#0D804A
+  "400": hsl(152, 82%, 28%),
+  //#3AC383
+  "300": hsl(152, 54%, 50%),
+  //#76D5A9
+  "200": hsl(152, 53%, 65%),
+  //#E7F8F0
+  "100": hsl(152, 55%, 94%)
+);
+
+$yellow: (
+  //#F4B51D
+  "900": hsl(42, 91%, 54%),
+  //#F5BD36
+  "800": hsl(42, 91%, 59%),
+  //#F7C64F
+  "700": hsl(43, 91%, 64%),
+  //#F8CE68
+  "600": hsl(43, 91%, 69%),
+  //#F9D682
+  "500": hsl(42, 91%, 74%),
+  //#FADE9B
+  "400": hsl(42, 90%, 79%),
+  //#FBE6B4
+  "300": hsl(42, 90%, 85%),
+  //#FDEFCD
+  "200": hsl(42, 92%, 90%),
+  //#FEF7E6
+  "100": hsl(42, 92%, 95%)
+);
+
+$red: (
+  "primary-red": hsl(4, 86%, 58%),
+  //#922922
+  "500": hsl(4, 62%, 35%),
+  //#A83027
+  "400": hsl(4, 62%, 41%),
+  //#F3645A
+  "300": hsl(4, 86%, 65%),
+  //#F9B2AD
+  "200": hsl(4, 86%, 83%),
+  //#FEECEB
+  "100": hsl(3, 90%, 96%),
+);
+
+$gray: (
+  "black": hsl(0, 0%, 0%),
+  //#111827
+  "primary-gray": hsl(221, 39%, 11%),
+  //#1F2937
+  "900": hsl(215, 28%, 17%),
+  //#374151
+  "800": hsl(217, 19%, 27%),
+  //#4B5563
+  "700": hsl(215, 14%, 34%),
+  //#6B7280
+  "600": hsl(220, 9%, 46%),
+  //#9CA3AF
+  "500": hsl(218, 11%, 65%),
+  //#D1D5DB
+  "400": hsl(216, 12%, 84%),
+  //#E5E7EB
+  "300": hsl(220, 13%, 91%),
+  //#F3F4F6
+  "200": hsl(220, 14%, 96%),
+  //#F9FAFB
+  "100": hsl(210, 20%, 98%),
+  "white": hsl(0, 0%, 100%),
+);
+
+//non utilizzato
+$grays: (
+  "1": hsl(0, 0%, 100%),
+  "2": hsl(0, 0%, 98%),
+  "3": hsl(0, 0%, 96%),
+  "4": hsl(0, 0%, 94%),
+  "5": hsl(0, 0%, 85%),
+  "6": hsl(0, 0%, 75%),
+  "7": hsl(0, 0%, 55%),
+  "8": hsl(0, 0%, 35%),
+  "9": hsl(0, 0%, 26%),
+  "10": hsl(0, 0%, 15%),
+  "11": hsl(0, 0%, 12%),
+  "12": hsl(0, 0%, 8%),
+  "13": hsl(0, 0%, 0%),
+);
+
+// Layout
+$justify-content-values: (
+  "flex-start",
+  "flex-end",
+  "center",
+  "space-between",
+  "space-around"
+);
+
+$align-items-values: (
+  "stretch",
+  "flex-start",
+  "flex-end",
+  "center",
+  "baseline"
+);
+
+$auth-header-height: 230px;
+$sidebar-width: 200px;
+$footer-height: 75px;
+$default-border-radius: 0.5rem;
+
+$headings-ff: "Work Sans", sans-serif;
+$body-ff: "Inter", sans-serif;
+
+// This set of variables represents the inline spacing
+// from the viewport to the content, which is devided into
+// "header" (navbar + top-idle components -e.g. steps in StepsLayout-)
+// and "content" (the main content of the page)
+$inline-viewport-padding: (
+  header: 0.5rem,
+  content: (
+    desktop: 2.5rem,
+    mobile: 1rem,
+  ),
+);
+
+// =========================
+// Breakpoints
+// =========================
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1440px,
+);

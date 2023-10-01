@@ -1,0 +1,28 @@
+@use "@style/variables" as variables;
+
+.toggle-user {
+  display: flex;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+
+  &__names {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+
+  &__name {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__out {
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,12 @@
+@use '@style/variables' as variables;
+
+.tags-container {
+  &__select {
+    width: 100%;
+  }
+
+  label {
+    font-size: .75rem;
+    color: map-get($map: variables.$theme, $key: 'red');
+  }
+}

@@ -1,0 +1,16 @@
+@use '@style/variables' as variables;
+
+.loader-full-width {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(map-get($map: variables.$grays, $key: '13'), 0.7);
+  pointer-events: none;
+  user-select: none;
+  z-index: 999;
+}

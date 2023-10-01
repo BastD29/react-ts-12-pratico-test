@@ -1,0 +1,50 @@
+@use "@style/variables";
+@use "@style/utility";
+@import "@style/mixins";
+
+$modal-border-radius: 0.75rem;
+
+.ant-modal {
+  &-content {
+    border-radius: $modal-border-radius;
+  }
+
+  &-header {
+    background-color: transparent;
+    border-bottom: unset;
+  }
+
+  &-title {
+    @extend .h4;
+    line-height: 2.5rem;
+    color: map-get(variables.$theme, "primary-violet");
+    margin-right: 2.5rem;
+  }
+
+  &-close-x {
+    width: unset;
+    height: unset;
+    line-height: unset;
+  }
+
+  &-body {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  &-footer {
+    border-top: unset;
+  }
+
+  &-close-x,
+  &-body,
+  &-footer {
+    @include px(1.5rem);
+  }
+
+  &-header,
+  &-close-x,
+  &-footer {
+    @include py(1.5rem);
+  }
+}

@@ -1,0 +1,13 @@
+@use "@style/variables" as variables;
+
+@mixin at-least($device-width) {
+  @media screen and (min-width: map-get(variables.$breakpoints, $device-width)) {
+    @content;
+  }
+}
+
+@mixin until($device-width) {
+  @media screen and (max-width: map-get(variables.$breakpoints, $device-width)) {
+    @content;
+  }
+}

@@ -1,0 +1,51 @@
+@mixin flex(
+  $direction: row,
+  $align: flex-start,
+  $justify: flex-start,
+  $gap: 0
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin grid($columns: 1, $column-gap: 0, $row-gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+}
+
+// In case "padding-inline" isn't supported
+// browser will use "padding-left|right"
+@mixin px($amount: 0) {
+  padding-left: $amount;
+  padding-right: $amount;
+  padding-inline: $amount;
+}
+
+// In case "padding-block" isn't supported
+// browser will use "padding-top|bottom"
+@mixin py($amount: 0) {
+  padding-top: $amount;
+  padding-bottom: $amount;
+  padding-block: $amount;
+}
+
+// In case "margin-inline" isn't supported
+// browser will use "margin-left|right"
+@mixin mx($amount: 0) {
+  margin-left: $amount;
+  margin-right: $amount;
+  margin-inline: $amount;
+}
+
+// In case "margin-block" isn't supported
+// browser will use "margin-top|bottom"
+@mixin my($amount: 0) {
+  margin-top: $amount;
+  margin-bottom: $amount;
+  margin-block: $amount;
+}
